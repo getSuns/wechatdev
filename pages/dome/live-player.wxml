@@ -1,0 +1,6 @@
+<!--pages/dome/live-player.wxml个人账号的小程序暂时是不能使用 <live-pusher> 和<live-player> 标签的-->
+<text>pages/dome/live-player.wxml</text>
+<live-player src="https://domain/pull_stream" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" />
+
+
+ <live-pusher url="https://domain/push_stream" mode="RTC" autopush bindstatechange="statechange" style="width: 300px; height: 225px;" />

@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+<button bindtap="scroll">最后最后</button>
+  <text>都是骗你的啦~ </text>
+   <image bindtap="bindViewTap" class="userinfo-avatar" src="http://ww2.sinaimg.cn/bmiddle/0069vjO6gy1fnpebgqooqj30i20i2mzh.jpg" background-size="cover"></image>
+</view>
+<import src="item.wxml"/>
+<template is="item" data="{{test: 'forbar'}}"/>
+<view class="btn-area">
+  <navigator url="/pages/dome/picker?title=picker" hover-class="navigator-hover">picker</navigator>
+  <navigator url="/pages/dome/picker-view" hover-class="navigator-hover">picker-view</navigator>
+<navigator url="/pages/dome/radio-group" hover-class="navigator-hover">radio-group</navigator>
+<navigator url="/pages/dome/slider" hover-class="navigator-hover">slider</navigator>
+<navigator url="/pages/dome/textarea" hover-class="navigator-hover">textarea</navigator>
+<navigator url="/pages/dome/audio" hover-class="navigator-hover">audio</navigator>
+<navigator url="/pages/dome/image" hover-class="navigator-hover">image</navigator>
+<navigator url="/pages/dome/live-player" hover-class="navigator-hover">live-player</navigator>
+<navigator url="/pages/dome/map" hover-class="navigator-hover">map</navigator>
+<navigator url="/pages/dome/canvas" hover-class="navigator-hover">canvas</navigator>
+<navigator url="/pages/dome/uploadfile" hover-class="navigator-hover">uploadfile</navigator>
+<navigator url="/pages/dome/animation" hover-class="navigator-hover">animation</navigator>
+</view>
+ 

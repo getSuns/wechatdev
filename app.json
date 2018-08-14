@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/index2",
+    "pages/logs/logs",
+    "pages/index/storylist",
+    "pages/dome/test1",
+    "pages/dome/test2",
+    "pages/dome/picker",
+    "pages/dome/picker-view",
+    "pages/dome/radio-group",
+    "pages/dome/slider",
+    "pages/dome/textarea",
+    "pages/dome/audio",
+    "pages/dome/image",
+    "pages/dome/live-player",
+    "pages/dome/map",
+    "pages/dome/canvas",
+    "pages/dome/uploadfile",
+    "pages/dome/animation"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "汽配龙diy",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": "20px",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "selectedColor": "#cc1b23",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/pages/res/index-icon.png",
+        "selectedIconPath": "/pages/res/index-icon-active.png"
+      },
+      {
+        "pagePath": "pages/index/storylist",
+        "text": "查找",
+        "iconPath": "/pages/res/sousuo-icon.png",
+        "selectedIconPath": "/pages/res/sousuo-icon-active.png"
+      },
+      {
+        "pagePath": "pages/dome/test1",
+        "text": "进货单",
+        "iconPath": "/pages/res/jinhuo-icon.png",
+        "selectedIconPath": "/pages/res/jinhuo-icon-active.png"
+      },
+      {
+        "pagePath": "pages/dome/test2",
+        "text": "我的",
+        "iconPath": "/pages/res/my-icon.png",
+        "selectedIconPath": "/pages/res/my-icon-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
