@@ -53,20 +53,7 @@ Page({
 
       })
     }
-    wx.setNavigationBarTitle({
-      title: '当前页面'
-    })
-    wx.setTabBarBadge({
-      index: 0,
-      text: '1'
-    })
-    wx.showTabBarRedDot({
-      index:2
-    })
-    wx.showNavigationBarLoading();
-    setTimeout(function () {
-    wx.hideNavigationBarLoading();
-    },3000);
+    
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -90,29 +77,7 @@ Page({
         })
       }
     })
-    const requestTask = wx.request({
-      url: 'https://m.qipeilong.cn/HPResourceMarke/GetHomePageJXTJInfo', 
-      data: Util.json2Form({
-        "pageCount": 8,
-        "pageNo": 1,
-        "positionID": "H5APP_JXTJ",
-        "ver": "1.0",
-        "modelType": 1
-      }),
-      header: {
-        'content-type':'application/x-www-form-urlencoded' //'application/json'
-      },
-      method: "POST",  
-      success: function (res) {
-        console.log(res.data)
-      },
-      fail: function (res) {
-        console.log('失败' + JSON.stringify(res))
-      },
-      complete:function(){
-        console.log("我是来好玩的")
-      }
-    })
+
 
     //requestTask.abort() // 取消请求任务
   },
@@ -174,6 +139,44 @@ Page({
     })
   },
   showtoast:function(){
+    //底部路由测试
+    // wx.switchTab({
+    //   url: '/pages/wear/home'
+    // })
+    //测试wx.reLaunch
+    // wx.reLaunch({
+    //   url: '/pages/wear/home?name=test'
+    // })
+    //测试redirectTo非底部路由
+    // wx.redirectTo({
+    //   url: '/index/index2?name=test'
+    // })
+    //测试开始下拉刷新
+    //wx.startPullDownRefresh()
+    //接口请求测试
+    const requestTask = wx.request({
+      url: 'https://m.qipeilong.cn/HPResourceMarke/GetHomePageJXTJInfo',
+      data: Util.json2Form({
+        "pageCount": 8,
+        "pageNo": 1,
+        "positionID": "H5APP_JXTJ",
+        "ver": "1.0",
+        "modelType": 1
+      }),
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' //'application/json'
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res.data)
+      },
+      fail: function (res) {
+        console.log('失败' + JSON.stringify(res))
+      },
+      complete: function () {
+        console.log("我是来好玩的")
+      }
+    })
     var animation = wx.createAnimation({
       transformOrigin: "50% 50%",
       duration: 1000,
@@ -211,10 +214,10 @@ showloading:function(){
   wx.showLoading({
     title: '加载中',
   })
-
   setTimeout(function () {
     wx.hideLoading()
   }, 2000)
+
 },
 showmodal:function(){
   wx.showModal({

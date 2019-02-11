@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/wear/home",
+    "pages/wear/my",
+    "pages/wear/wardrobe",
     "pages/index/index",
     "pages/index/index2",
     "pages/logs/logs",
@@ -17,43 +20,38 @@
     "pages/dome/map",
     "pages/dome/canvas",
     "pages/dome/uploadfile",
-    "pages/dome/animation"
+    "pages/dome/animation",
+    "pages/wear/upclothes"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "汽配龙diy",
+    "navigationBarBackgroundColor": "#fcc12e",
+    "navigationBarTitleText": "今天穿什么",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": "20px",
     "backgroundColor": "#ffffff"
   },
   "tabBar": {
-    "selectedColor": "#cc1b23",
+    "selectedColor": "#ffb907",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/wear/home",
         "text": "首页",
-        "iconPath": "/pages/res/index-icon.png",
-        "selectedIconPath": "/pages/res/index-icon-active.png"
+        "iconPath": "/pages/res/ic-home1.png",
+        "selectedIconPath": "/pages/res/ic-home2.png"
       },
       {
-        "pagePath": "pages/index/storylist",
-        "text": "查找",
-        "iconPath": "/pages/res/sousuo-icon.png",
-        "selectedIconPath": "/pages/res/sousuo-icon-active.png"
+        "pagePath": "pages/wear/wardrobe",
+        "text": "我的衣柜",
+        "iconPath": "/pages/res/ic-wardrobe1.png",
+        "selectedIconPath": "/pages/res/ic-wardrobe2.png"
       },
       {
-        "pagePath": "pages/dome/test1",
-        "text": "进货单",
-        "iconPath": "/pages/res/jinhuo-icon.png",
-        "selectedIconPath": "/pages/res/jinhuo-icon-active.png"
-      },
-      {
-        "pagePath": "pages/dome/test2",
-        "text": "我的",
-        "iconPath": "/pages/res/my-icon.png",
-        "selectedIconPath": "/pages/res/my-icon-active.png"
+        "pagePath": "pages/wear/my",
+        "text": "个人中心",
+        "iconPath": "/pages/res/ic-my1.png",
+        "selectedIconPath": "/pages/res/ic-my2.png"
       }
     ]
   },

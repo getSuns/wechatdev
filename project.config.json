@@ -20,13 +20,42 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "个人中心",
+					"pathName": "pages/wear/my",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "我的衣柜",
+					"pathName": "pages/wear/wardrobe",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "storylist",
+					"pathName": "pages/index/storylist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				}
+			]
 		}
 	}
 }
