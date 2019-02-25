@@ -1,0 +1,33 @@
+<!--pages/wear/wardrobe.wxml-->
+<view class='wrapper'>
+  <view class='clotheslist'>
+    <view class='clothestext'bindtap="toggerlist" data-index="{{jacketitem.type}}"> 
+      <image class='ic-clothesimg' src="/pages/res/ic-j1.png" />
+      <text>{{jacketitem.typename}}</text>
+      <image class='fright' src="{{jacketitem.icsrc}}" />
+    </view>
+    <view class='contentinfo'  hidden="{{jacketitem.hiddena}}">
+      <view class='clothesbox' wx:for="{{jacketitem.item}}" wx:key="{{index}}"  wx:for-item="itemData" >
+        <text>{{itemData.name}}</text>
+        <image src="{{itemData.url}}" />
+      </view>
+    </view>
+  </view>
+  <view class='clotheslist'>
+    <view class='clothestext' bindtap="toggerlist" data-index="{{trousersitem.type}}"> 
+      <image class='ic-clothesimg' src="/pages/res/ic-t1.png" />
+      <text>{{trousersitem.typename}}</text>
+      <image class='fright' src="{{trousersitem.icsrc}}" />
+    </view>
+   
+    <view class='contentinfo' hidden="{{trousersitem.hiddena}}">
+      <view class='clothesbox' wx:for="{{trousersitem.item}}" wx:key="{{index}}"  wx:for-item="itemData" >
+        <text>{{itemData.name}}</text>
+        <image src="{{itemData.url}}" />
+      </view>
+    </view>
+  </view>
+  <view class='bombox'>
+    <button class='upbtn' bindtap="upclothes">我要上传</button>
+  </view>
+</view>

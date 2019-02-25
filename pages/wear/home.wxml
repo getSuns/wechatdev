@@ -1,0 +1,14 @@
+<!--pages/wear/home.wxml-->
+<view class='wrapper'>
+  <view class='topinfo'><h2>魔镜 魔镜告诉我，今天我要穿什么</h2></view>
+  <view class='contentinfo'>
+   <image class='wearimg' src="{{weartopurl}}" />
+   <image wx:if="{{wearshow}}" class='wearimg' src="{{weartopurl2}}" />
+   <button bindtap="setwear">{{weartoptext}}</button>
+  </view>
+  <view class='contentinfo'>
+    <image class='wearimg' src="{{wearbtmurl}}" />
+    <image wx:if="{{wearshow2}}" class='wearimg' src="{{wearbtmurl2}}" />
+    <button bindtap="setwear2">{{wearbtmtext}}</button>
+  </view>
+</view>

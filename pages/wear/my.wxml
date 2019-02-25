@@ -1,0 +1,23 @@
+<!--pages/wear/my.wxml-->
+<view class='wrapper'>
+  <view class="userinfo">
+  <block wx:if="{{!hasUserInfo && canIUse}}">
+  <image  class='agif' src="/pages/res/ij-a.jpg"></image>
+      <button class='loginbtn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">等撩</button>
+  </block>
+    <block wx:if="{{hasUserInfo && canIUse && userInfo}}">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image class='agif' src="/pages/res/ig-a2.gif"></image>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class='gifbox'>
+        <image  src="/pages/res/ig-a.gif"></image>
+      </view>
+          
+    </block>
+    <block wx:if="{{!userInfo}}">
+      <image  class='agif' src="/pages/res/ig-a3.gif"></image>
+      <button class='loginbtn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">就一下下</button>
+    
+    </block>
+  </view>
+</view>

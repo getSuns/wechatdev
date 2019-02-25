@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -54,6 +54,11 @@
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "上传衣服",
+					"pathName": "pages/wear/upclothes"
 				}
 			]
 		}

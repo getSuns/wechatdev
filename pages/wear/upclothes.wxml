@@ -1,0 +1,17 @@
+<!--pages/wear/upclothes.wxml-->
+<view class='wrapper'>
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+    <!--drawer content-->  
+    <view class="drawer_title">上传衣服</view> 
+    <view class="drawer_content"> 
+      <button bindtap="setclothestype">衣服类型</button>
+      <input placeholder='衣服名字如：蓝色卫衣' value="" bindinput='getclothesname'></input> 
+      <button bindtap='uploadimg'>衣服图片</button>
+    </view> 
+    <view class='btnbox'>    
+      <button class="btn_cancel" bindtap="closemodel" data-statu="close">取消</button>
+      <button class="btn_ok" bindtap="addclothes" data-statu="close">确定</button> 
+    </view>
+
+  </view>
+</view>

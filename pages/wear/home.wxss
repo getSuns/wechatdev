@@ -1,0 +1,26 @@
+/* pages/wear/home.wxss */
+
+.topinfo h2{
+  text-align:center;
+  display: block;
+  margin:30rpx 0rpx 20rpx;
+}
+.contentinfo{
+  text-align: center;
+  padding:50rpx 0;
+}
+.contentinfo button{
+  width:280rpx;
+  height:58rpx;
+  line-height:58rpx;
+  border:none;
+  background-color:#fcc12e;
+  color:#fff;
+  font-size:26rpx;
+  margin-top:15rpx;
+  text-align: center;
+}
+.wearimg{
+  display: block;
+  margin: auto;
+}

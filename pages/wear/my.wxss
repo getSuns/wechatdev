@@ -1,0 +1,42 @@
+/* pages/wear/my.wxss */
+.radio-group{
+  display: inline-block;
+}
+.userinfo-avatar{
+  border-radius:100rpx;
+  width:200rpx;
+  height:200rpx;
+
+}
+.userinfo{
+  text-align: center;
+}
+.userinfo-nickname{
+  display: block;
+  margin: 50rpx;
+}
+.loginbtn{
+  width:500rpx;
+  margin-top:8px;
+  border: 1rpx solid #ffb907;
+  margin: 300rpx auto;
+}
+.gifbox{
+  display:none;
+  text-align:right;
+
+}
+.gifbox image{
+  width:380rpx;
+  height:400rpx;
+}
+.agif{
+  width: 360rpx;
+  height: 320rpx;
+  margin-top: 100rpx;
+}
+.agif2{
+  width: 360rpx;
+  height: 320rpx;
+  margin-top:-200rpx;
+}
