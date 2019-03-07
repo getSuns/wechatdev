@@ -1,0 +1,7 @@
+<view wx:if="{{can_getuserinfo==0}}">
+<text>\n</text>
+<text>\n</text>
+<text>\n</text>
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<view wx:else>请升级微信版本</view>
+</view>

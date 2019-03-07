@@ -41,8 +41,8 @@ Page({
       success() { }
     })
   },
+
   setwear:function(e){
-    
     var jitem = this.data.jacketitem.item;
     var titem = this.data.trousersitem.item;
     var index = Math.floor(Math.random() * jitem.length)

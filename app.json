@@ -21,7 +21,8 @@
     "pages/dome/canvas",
     "pages/dome/uploadfile",
     "pages/dome/animation",
-    "pages/wear/upclothes"
+    "pages/wear/upclothes",
+    "pages/wear/login"
   ],
   "window": {
     "backgroundTextStyle": "dark",
