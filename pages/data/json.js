@@ -5,89 +5,130 @@ var jacketitem = {
   "icsrc": "/pages/res/ic-up.png",
   "item": [
     {
-      "name": "粉色假两件",
-      "id": 1,
-      "url": "/pages/res/p-s1.jpg",
-      "xid": 1
+      "item":
+        {
+        "name": "粉色假两件",
+        "id": 1,
+        "src": "/pages/res/p-s1.jpg",
+        "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "黑色圆领卫衣",
       "id": 2,
-      "url": "/pages/res/p-s2.jpg",
-      "xid": 1
+      "src": "/pages/res/p-s2.jpg",
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "蓝色卫衣",
       "id": 3,
-      "url": "/pages/res/p-s3.jpg",
-      "xid": 1
+      "src": "/pages/res/p-s3.jpg",
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "金色打底衫",
       "id": 4,
       "url": "/pages/res/p-s4.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "黄色衬衫",
       "id": 5,
       "url": "/pages/res/p-s5.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "黑色打底衫",
       "id": 6,
       "url": "/pages/res/p-s6.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "黄色毛衣",
       "id": 7,
       "url": "/pages/res/p-s7.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "粉色卫衣",
       "id": 8,
       "url": "/pages/res/p-s8.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "紫粉短袖",
       "id": 9,
       "url": "/pages/res/p-s9.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "带帽条纹卫衣",
       "id": 10,
       "url": "/pages/res/p-s10.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "渐变毛衣",
       "id": 11,
       "url": "/pages/res/p-s11.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item":{ 
       "name": "绒毛短袖",
       "id": 12,
       "url": "/pages/res/p-s12.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "白色短袖衬衫",
       "id": 13,
       "url": "/pages/res/p-s13.jpg",
-      "xid": 1
+      "type": 1
+        }
     }
     ,
     {
+      "item": 
+        {
       "name": "白色短T袖",
       "id": 14,
       "url": "/pages/res/p-s14.jpg",
-      "xid": 1
+      "type": 1
+        }
     }
   ]
 }
@@ -98,88 +139,127 @@ var trousersitem={
   "icsrc":"/pages/res/ic-up.png",
   "item": [
     {
+      "item": 
+        {
       "name": "白色牛仔裤",
       "id": 1,
       "url": "/pages/res/p-k1.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "哈伦收裤脚牛仔裤",
       "id": 1,
       "url": "/pages/res/p-k2.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "阔腿牛仔裤",
       "id": 1,
       "url": "/pages/res/p-k3.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "男友风牛仔裤",
       "id": 1,
       "url": "/pages/res/p-k4.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "束带休闲裤",
       "id": 1,
       "url": "/pages/res/p-k5.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "黑色阔腿裤",
       "id": 1,
       "url": "/pages/res/p-k6.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "米色直筒裤",
       "id": 1,
       "url": "/pages/res/p-k7.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "时尚牛仔裤",
       "id": 1,
       "url": "/pages/res/p-k8.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
       "name": "格子短裤",
       "id": 1,
       "url": "/pages/res/p-k9.jpg",
-      "xid": 1
+      "type": 1
     },
     {
+      "item": 
+        {
       "name": "卡其格子短裤",
       "id": 1,
       "url": "/pages/res/p-k10.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "牛仔短裤",
       "id": 1,
       "url": "/pages/res/p-k11.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "卡其色束脚裤",
       "id": 1,
       "url": "/pages/res/p-k12.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "黑色白边阔腿裤",
       "id": 1,
       "url": "/pages/res/p-k13.jpg",
-      "xid": 1
+      "type": 1
+        }
     },
     {
+      "item": 
+        {
       "name": "紫色休闲裤",
       "id": 1,
       "url": "/pages/res/p-k14.jpg",
-      "xid": 1
+      "type": 1
+        }
     }
   ]
 }

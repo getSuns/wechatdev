@@ -1,9 +1,14 @@
 //index.js
 //获取应用实例
 var localData = require('../data/json.js');
-
-const app = getApp()
-
+var app = getApp()
+//初始化
+wx.cloud.init({
+  env: 'ldd233-ddb286',
+  traceUser: true
+})
+const db = wx.cloud.database()
+const _ = db.command;
 
 Page({
   data: {
@@ -20,11 +25,35 @@ Page({
     index2:0
   },
   onLoad: function (option) {
-    //console.log(option) 
-    this.setData({
-      jacketitem: localData.jacketitem,
-      trousersitem: localData.trousersitem
-    });
+    //数据库中取
+    db.collection('clothes').get().then(res => {
+      // res.data 包含该记录的数据
+      var jitem = [];
+      var titem = [];
+      for (let v of res.data) {
+        if (v.item.type) {
+          titem.push(v);
+        } else {
+          jitem.push(v);
+        }
+      }
+        //没有自己的衣服或者裤子使用默认数据
+        // console.log(jitem.length)
+        // if (!jitem.length || !titem.length) {
+        //   console.log("11")
+        // this.setData({
+        //   jacketitem: localData.jacketitem.item,
+        //   trousersitem: localData.trousersitem.item
+        // });
+        this.setData({
+          jacketitem: jitem,
+          trousersitem: titem
+        });
+
+    })
+    
+    
+ 
     //顶部loading
     wx.showNavigationBarLoading();
     setTimeout(function () {
@@ -40,20 +69,37 @@ Page({
       withShareTicket: true,
       success() { }
     })
+
   },
 
   setwear:function(e){
-    var jitem = this.data.jacketitem.item;
-    var titem = this.data.trousersitem.item;
+    var jitem = this.data.jacketitem;
+    var titem = this.data.trousersitem;
     var index = Math.floor(Math.random() * jitem.length)
     var indexk = Math.floor(Math.random() * titem.length)
-    console.log(index+","+indexk);
-    this.setData({
-      wearshow: true,
-      weartopurl: jitem[index].url,
-      weartopurl2: titem[indexk].url,
-      weartoptext:"不喜欢,下一套",
-    });
+    if (jitem.length + titem.length<3 && this.data.wearshow) {
+      wx.showToast({
+        title: '小仙女该加衣服了~',
+        icon: 'none',
+        duration: 1000
+      })
+    }
+    if (jitem.length + titem.length < 2) {
+      wx.showToast({
+        title: '请到我的衣柜上传衣服~',
+        icon: 'none',
+        duration: 1000
+      })
+    }else{
+      this.setData({
+        wearshow: true,
+        weartopurl: jitem[index].item.src,
+        weartopurl2: titem[indexk].item.src,
+        weartoptext: "不喜欢,下一套",
+      });
+    }
+    
+    
   },
   setwear2: function (e) {
     var index2 = this.data.index2;
@@ -63,6 +109,24 @@ Page({
       wearbtmtext: "再换",
       index2: index2 + 1,
     });
+    switch (index2){
+      case 3:
+        var tiptext = "累不累哦~"
+      break;
+      case 35:
+      break;
+      case 40:
+      break;
+      case 50:
+      default:
+        wx.showToast({
+          title: tiptext,
+          icon: 'none',
+          duration: 1000
+        })
+      break;
+    }
+   
   }
 
 })

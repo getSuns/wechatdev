@@ -53,9 +53,9 @@ Page({
   },
   toggerlist:function(e){
     var typeid = e.currentTarget.dataset.index;
-    console.log(e.currentTarget.dataset);
     var jitem = this.data.jacketitem;
     var titem = this.data.trousersitem;
+    console.log(jitem)
     if (typeid==0){
       jitem.hiddena = jitem.hiddena ? false : true;
       if (jitem.hiddena){
