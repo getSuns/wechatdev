@@ -34,9 +34,9 @@ App({
     })
   },
   //上传文件
-  upload_file:function (url, filePath, name, formData, success, fail) {
+  upload_file: function (url, filePath, name, formData, success, fail) {
     console.log('a=' + filePath)
-wx.uploadFile({
+    wx.uploadFile({
       url: url,
       filePath: filePath,
       name: name,
@@ -61,7 +61,7 @@ wx.uploadFile({
   globalData: {
     userInfo: null
   },
-  setphoto:function(){
+  setphoto: function () {
     // 获取用户信息
     wx.getSetting({
       success: res => {

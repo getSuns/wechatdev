@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.4",
 	"appid": "wxdbbe18c36d67a1bf",
-	"projectname": "Fantasy",
+	"projectname": "whatweartests",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
@@ -58,7 +58,13 @@
 				{
 					"id": -1,
 					"name": "上传衣服",
-					"pathName": "pages/wear/upclothes"
+					"pathName": "pages/wear/upclothes",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/wear/login"
 				}
 			]
 		}
