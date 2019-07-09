@@ -30,9 +30,13 @@
   text-align: center;  
 } 
 .drawer_content { 
-  height: 210px;  
+  min-height: 210px;  
   overflow-y: scroll; /*超出父盒子高度可滚动*/ 
 } 
+.wearimgbox {
+  text-align: center;
+}
+
 .title { 
     height: 30px;  
     line-height: 30px;  

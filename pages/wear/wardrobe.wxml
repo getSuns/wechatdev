@@ -7,9 +7,9 @@
       <image class='fright' src="{{jacketitem.icsrc}}" />
     </view>
     <view class='contentinfo'  hidden="{{jacketitem.hiddena}}">
-      <view class='clothesbox' wx:for="{{jacketitem.item}}" wx:key="{{index}}"  wx:for-item="itemData" >
-        <text>{{itemData.name}}</text>
-        <image src="{{itemData.url}}" />
+      <view class='clothesbox' wx:for="{{jacketitem.item}}" wx:key="{{index}}"  wx:for-item="itemData" bindlongtap="longTap" data-index="{{itemData._id}}">
+        <text>{{itemData.item.name}}</text>
+        <image src="{{itemData.item.src}}" />
       </view>
     </view>
   </view>
@@ -21,9 +21,9 @@
     </view>
    
     <view class='contentinfo' hidden="{{trousersitem.hiddena}}">
-      <view class='clothesbox' wx:for="{{trousersitem.item}}" wx:key="{{index}}"  wx:for-item="itemData" >
-        <text>{{itemData.name}}</text>
-        <image src="{{itemData.url}}" />
+      <view class='clothesbox' wx:for="{{trousersitem.item}}" wx:key="{{index}}"  wx:for-item="itemData" bindlongtap="longTap" data-index="{{itemData._id}}">
+        <text>{{itemData.item.name}}</text>
+        <image src="{{itemData.item.src}}" />
       </view>
     </view>
   </view>

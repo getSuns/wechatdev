@@ -1,24 +1,62 @@
 //index.js
 //获取应用实例
-var localData = require('../data/json.js');
-const app = getApp()
+var app = getApp()
+//初始化
+wx.cloud.init({
+  env: 'ldd233-ddb286',
+  traceUser: true
+})
+const db = wx.cloud.database()
+const _ = db.command;
+//var localData = require('../data/json.js');
 Page({
   data: {
     jacketitem:{},
     trousersitem:{}
   },
   onLoad:function(){
-    this.setData({
-      jacketitem: localData.jacketitem,
-      trousersitem: localData.trousersitem
-    });
+    var jacketitemc={
+      "type": 0,
+      "typename": "上衣",
+      "hiddena": false,
+      "icsrc": "/pages/res/ic-up.png",
+      "item":[]
+    };
+    var trousersitemc = {
+      "type": 1,
+      "typename": "裤子",
+      "hiddena": false,
+      "icsrc": "/pages/res/ic-up.png",
+      "item": []
+    };
+    db.collection('clothes').get().then(res => {
+      // res.data 包含该记录的数据
+      var jitem=[];
+      var titem=[];
+      for (let v of res.data) {
+        if (v.item.type){
+          titem.push(v);
+        }else{
+          jitem.push(v);
+        }
+      }
+      jacketitemc.item = jitem;
+      trousersitemc.item = titem;
+    })
+    setTimeout(() => {
+      this.setData({
+        jacketitem: jacketitemc,
+        trousersitem: trousersitemc,
+      });
+    }, 500);
+    
   },
   toggerlist:function(e){
-    console.log(e);
     var typeid = e.currentTarget.dataset.index;
+    console.log(e.currentTarget.dataset);
     var jitem = this.data.jacketitem;
     var titem = this.data.trousersitem;
-    if (typeid==1){
+    if (typeid==0){
       jitem.hiddena = jitem.hiddena ? false : true;
       if (jitem.hiddena){
         jitem.icsrc = "/pages/res/ic-down.png";
@@ -33,33 +71,45 @@ Page({
         titem.icsrc = "/pages/res/ic-up.png";
       }
     }
-    
     this.setData({
       jacketitem: jitem,
       trousersitem: titem
     });
   },
+  longTap: function (e) {
+    var that=this;
+    wx.showModal({
+      title: '',
+      content: '是否删除？',
+      cancelText: "取消",
+      confirmText: "确定",
+      success(res) {
+        if (res.confirm) {
+          var id = e.currentTarget.dataset.index;
+          db.collection('clothes').doc(id).remove()
+            .then(res => {
+              wx.showToast({
+                title: '删除成功',
+                icon: 'success',
+                duration: 1000
+              })
+              that.onLoad();
+            })
+            .catch(console.error)
+        } else if (res.cancel) {
+         
+        }
+      }
+    })
+   
+  },
   upclothes: function (e) {
-    // wx.chooseImage({
-    //   success(res) {
-    //     const tempFilePaths = res.tempFilePaths
-    //     wx.uploadFile({
-    //       url: '../data/json.js', // 仅为示例，非真实的接口地址
-    //       filePath: tempFilePaths[0],
-    //       name: 'file',
-    //       formData: {
-    //         user: 'test'
-    //       },
-    //       success(res) {
-    //         const data = res.data
-    //         // do something
-    //       }
-    //     })
-    //   }
-    // })
     wx.navigateTo({
       url: '/pages/wear/upclothes'
     })
+  },
+  onPullDownRefresh:function(){
+    this.onLoad();
   }
 })
 

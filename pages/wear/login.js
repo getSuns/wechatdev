@@ -12,9 +12,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that =this;
+    //获取用户的授权信息，放到本地缓存中
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userInfo'])
+    {
+      wx.setStorage({
+        key: 'can_getuserinfo',
+        data: 1,
+      })
+    }else
+        {
+    wx.setStorage({
+      key: 'can_getuserinfo',
+      data: 0,
+    })
+  }
+}}),
+  wx.getStorage({
+    key: 'can_getuserinfo',
+    success: function (res) {
+      console.log(res.data);
+      that.setData({
+        can_getuserinfo: res.data
+      })
+    }, fail: function () {
+      that.setData({
+        can_getuserinfo: 0
+      })
+    }
+  })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
