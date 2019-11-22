@@ -40,3 +40,10 @@
   height: 320rpx;
   margin-top:-200rpx;
 }
+.chatbtn{
+  width: 360rpx;
+  background-color: #ffb907;
+  border: 1rpx solid #ffb907;
+  color: #fff;
+  margin-top: 160rpx;
+}

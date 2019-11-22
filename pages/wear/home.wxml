@@ -9,6 +9,7 @@
   <view class='contentinfo'>
     <image class='wearimg' src="{{wearbtmurl}}" />
     <image wx:if="{{wearshow2}}" class='wearimg' src="{{wearbtmurl2}}" />
-    <button bindtap="setwear2">{{wearbtmtext}}</button>
+    <button bindtap="setwear2">{{wearbtmtext}}{{num}}</button>
+  
   </view>
 </view>

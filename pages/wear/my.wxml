@@ -12,7 +12,7 @@
       <view class='gifbox'>
         <image  src="/pages/res/ig-a.gif"></image>
       </view>
-          
+          <button open-type="contact" bindcontact="handleContact" class="chatbtn">萌妹客服室</button>
     </block>
     <block wx:if="{{!userInfo}}">
       <image  class='agif' src="/pages/res/ig-a3.gif"></image>

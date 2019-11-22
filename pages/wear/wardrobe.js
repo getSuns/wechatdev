@@ -15,12 +15,18 @@ Page({
     trousersitem:{}
   },
   onLoad:function(){
-    var jacketitemc={
+    this.getdata();
+  },
+  onshow: function (e) {
+    this.getdata();
+  },
+  getdata:function(e){
+    var jacketitemc = {
       "type": 0,
       "typename": "上衣",
       "hiddena": false,
       "icsrc": "/pages/res/ic-up.png",
-      "item":[]
+      "item": []
     };
     var trousersitemc = {
       "type": 1,
@@ -31,25 +37,23 @@ Page({
     };
     db.collection('clothes').get().then(res => {
       // res.data 包含该记录的数据
-      var jitem=[];
-      var titem=[];
+      var jitem = [];
+      var titem = [];
       for (let v of res.data) {
-        if (v.item.type){
+        if (v.item.type) {
           titem.push(v);
-        }else{
+        } else {
           jitem.push(v);
         }
       }
       jacketitemc.item = jitem;
       trousersitemc.item = titem;
-    })
-    setTimeout(() => {
       this.setData({
         jacketitem: jacketitemc,
         trousersitem: trousersitemc,
       });
-    }, 500);
-    
+      console.log(this.data)
+    })
   },
   toggerlist:function(e){
     var typeid = e.currentTarget.dataset.index;

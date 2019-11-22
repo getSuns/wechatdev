@@ -48,6 +48,10 @@ Page({
       wx.hideNavigationBarLoading();
     }, 300);
   },
+  handleContact(e) {
+    console.log(e.path)
+    console.log(e.query)
+  },
   getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

@@ -22,7 +22,7 @@ Page({
     wearbtmurl2: "/pages/res/wear5.jpg",
     weartoptext:"穿啥呢",
     wearbtmtext: "换套厉害的",
-    index2:0
+    index2:0,
   },
   onLoad: function (option) {
     //数据库中取
@@ -102,12 +102,14 @@ Page({
     
   },
   setwear2: function (e) {
+
+
     var index2 = this.data.index2;
     if(index2 == localData.wearlist.length) index2=0;
     this.setData({
       wearbtmurl: localData.wearlist[index2],
       wearbtmtext: "再换",
-      index2: index2 + 1,
+      index2: index2 + 1
     });
     switch (index2){
       case 3:
@@ -127,6 +129,10 @@ Page({
       break;
     }
    
+  },
+  onPullDownRefresh: function () {
+    this.onLoad();
+    console.log("2")
   }
 
 })

@@ -14,7 +14,8 @@ Page({
     clothestype:"",
     clothestypename:"",
     count: 0,
-    imgUrl:""
+    imgUrl:"",
+    imgSrc:""
   },
   /**
   * 生命周期函数--监听页面加载
@@ -44,7 +45,6 @@ Page({
   },
   addclothes: function (e) {
     const that=this;
-    console.log(this.data.clothestype);
     if (!this.data.clothesname || !this.data.clothestypename){
       wx.showToast({
         title: '请填写衣服类型及名称',
@@ -64,6 +64,48 @@ Page({
         app.globalData.fileID = res.fileID
         app.globalData.cloudPath = cloudPath
         app.globalData.imagePath = filePath
+        console.log(res)
+        that.setData({
+          imgSrc: res.fileID
+        })
+        var item = {
+          "name": this.data.clothesname,
+          "type": this.data.clothestype,
+          "id": this.data.count + 1,
+          "src": this.data.imgSrc
+        }
+        db.collection('clothes').add({
+          // data 字段表示需新增的 JSON 数据
+          data: {
+            item
+          }
+        })
+          .then(res => {
+            wx.showModal({
+              title: '上传成功',
+              content: '您已上传成功，是否继续上传？',
+              cancelText: "衣柜",
+              confirmText: "上传",
+              success(res) {
+                if (res.confirm) {
+                  //继续上传
+                  that.setData({
+                    clothesname: "",
+                    clothestype: "",
+                    clothestypename: "",
+                    count: 0,
+                    imgUrl: ""
+                  })
+                } else if (res.cancel) {
+                  //回到我的衣柜
+                  wx.reLaunch({
+                    url: '/pages/wear/wardrobe'
+                  })
+                }
+                console.log(res);
+              }
+            })
+          })
       },
       fail: e => {
         console.error('[上传文件] 失败：', e)
@@ -77,44 +119,8 @@ Page({
       }
     })
 //end
-    var item={
-      "name": this.data.clothesname,
-      "type": this.data.clothestype,
-      "id": this.data.count+1,
-      "src": this.data.imgUrl
-    }
-    db.collection('clothes').add({
-        // data 字段表示需新增的 JSON 数据
-          data: {
-            item
-          }
-        })
-        .then(res => {
-          wx.showModal({
-            title: '上传成功',
-            content: '您已上传成功，是否继续上传？',
-            cancelText:"衣柜",
-            confirmText:"上传",
-            success(res) {
-              if (res.confirm) {
-                //继续上传
-                that.setData({
-                  clothesname: "",
-                  clothestype: "",
-                  clothestypename: "",
-                  count: 0,
-                  imgUrl: ""
-                })
-              } else if (res.cancel) {
-                console.log(1111)
-                //回到我的衣柜
-                wx.reLaunch({
-                  url: '/pages/wear/wardrobe'
-                })
-              }
-            }
-          })
-        })
+
+    
   },
   closemodel:function(e){
     var currentStatu = e.currentTarget.dataset.statu;
@@ -202,7 +208,6 @@ Page({
           that.setData({
             imgUrl: filePath
           })
-          console.log(filePath);
         },
         complete: () => {
           wx.hideLoading()
