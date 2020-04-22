@@ -29,5 +29,7 @@
   </view>
   <view class='bombox'>
     <button class='upbtn' bindtap="upclothes">我要上传</button>
+    <button class='firebtn' bindtap="fire">我要火</button>
+
   </view>
 </view>

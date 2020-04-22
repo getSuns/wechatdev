@@ -60,6 +60,11 @@ Page({
     wx.navigateTo({
       url: '/pages/wear/upclothes'
     })
+  },
+  fire:function(){
+    wx.navigateTo({
+      url: '/pages/wear/fire'
+    })
   }
 })
 

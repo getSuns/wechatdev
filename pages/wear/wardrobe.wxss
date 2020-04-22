@@ -56,3 +56,10 @@
   background-color:#fcc12e;
   color: #fff; 
 }
+.firebtn{
+  width: 300rpx;
+  background-color: red;
+  color: white;
+  margin-top: 30rpx;
+  opacity: .6rpx;
+}

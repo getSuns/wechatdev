@@ -11,6 +11,8 @@
 	"libVersion": "1.6.4",
 	"appid": "wxdbbe18c36d67a1bf",
 	"projectname": "Fantasy",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -25,6 +27,10 @@
 			"list": []
 		},
 		"game": {
+			"current": -1,
+			"list": []
+		},
+		"gamePlugin": {
 			"current": -1,
 			"list": []
 		},
@@ -58,7 +64,14 @@
 				{
 					"id": -1,
 					"name": "上传衣服",
-					"pathName": "pages/wear/upclothes"
+					"pathName": "pages/wear/upclothes",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "火",
+					"pathName": "pages/wear/fire",
+					"scene": null
 				}
 			]
 		}
