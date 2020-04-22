@@ -1,7 +1,0 @@
-text{
-  font-size: 14px;
-  padding: 10px;
-}
-.magbtm{
-  margin-bottom: 500rpx;
-}
